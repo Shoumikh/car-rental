@@ -42,9 +42,14 @@
   padding-top: 10px;
 }
 
-.headerTwo__middleOurCars {
+.headerTwo__middleItem {
   padding: 10px;
   color: black;
+}
+
+.headerTwo__middleItem:hover {
+  color: grey;
+  text-decoration: none;
 }
 
 .headerTwo__right {

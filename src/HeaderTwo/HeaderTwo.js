@@ -19,12 +19,15 @@ function HeaderTwo() {
         <p>Home</p>
         <p>Service</p>
         <p>About</p>
-        <Link className="headerTwo__middleOurCars" to="/rentcar">
+        <Link className="headerTwo__middleItem" to="/rentcar">
           <p>OurCars</p>
         </Link>
-        <p>Page</p>
         <p>Contact</p>
-        <SearchIcon className="headerTwo__middleSearchIcon" />
+        <Link className="headerTwo__middleItem" to="/signin">
+          <p>SignIn</p>
+        </Link>
+
+        {/* <SearchIcon className="headerTwo__middleSearchIcon" /> */}
       </div>
       <div className="headerTwo__right">
         <div className="headerTwo__rightSearch"></div>
