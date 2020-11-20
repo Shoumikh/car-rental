@@ -1,0 +1,65 @@
+.carCard {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+  background-color: whitesmoke;
+  padding: 20px;
+  border-radius: 5px;
+}
+.carCard > img {
+  width: 350px;
+}
+
+.carCard__info {
+  margin-left: 20px;
+  width: 100%;
+}
+
+.carCard__info > h3 {
+  font-size: 24px;
+}
+
+.carCard__info > p {
+  margin-bottom: 0px;
+}
+
+.carCard__icons {
+  margin-top: 10px;
+}
+
+.carCard__icons > span {
+  padding-right: 20px;
+}
+
+.carCard__items {
+  display: flex;
+}
+
+.carCard__itemOne {
+  flex: 1;
+}
+
+.carCard__itemTwo {
+  flex: 1;
+}
+
+.carCard__itemPrice {
+  flex: 2;
+}
+
+.carCard__itemPrice > button {
+  padding: 2px 100px;
+  background-color: seagreen;
+  color: white;
+
+  font-size: 10px;
+  border: 1px solid green;
+  border-radius: 25px;
+  font-size: 20px;
+}
+
+.carCard__itemPrice > button:hover {
+  background-color: white;
+  color: seagreen;
+  cursor: pointer;
+}
