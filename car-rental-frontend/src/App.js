@@ -1,4 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import AddScreen from "./Admin/AddScreen";
+import Admin from "./Admin/Admin";
 import "./App.css";
 import Cars from "./Cars/Cars";
 import Footer from "./Footer/Footer";
@@ -13,6 +15,24 @@ function App() {
     <Router>
       <div className="app">
         <Switch>
+          <Route path="/carinfo/addcar">
+            <HeaderOne />
+            <HeaderTwo />
+            <AddScreen />
+            <Footer />
+          </Route>
+          <Route path="/carinfo/totalcars">
+            <HeaderOne />
+            <HeaderTwo />
+            <Admin />
+            <Footer />
+          </Route>
+          <Route path="/admin">
+            <HeaderOne />
+            <HeaderTwo />
+            <Admin />
+            <Footer />
+          </Route>
           <Route path="/rentcar">
             <HeaderOne />
             <HeaderTwo />

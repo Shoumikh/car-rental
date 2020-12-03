@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   overflow: auto;
-  border-bottom: 1px solid lightgray;
+  /* border-bottom: 1px solid lightgray; */
   z-index: 100;
 }
 
@@ -29,6 +29,7 @@
 .headerTwo__middle {
   display: flex;
   padding: 10px;
+  justify-content: center;
   flex: 1;
 }
 
@@ -65,13 +66,13 @@
   background-color: white;
   color: seagreen;
   font-size: 10px;
-  border: 1px solid green;
+  border: 1px solid seagreen;
   border-radius: 25px;
   font-size: 20px;
 }
 
 .headerTwo__rightButton :hover {
-  background-color: green;
+  background-color: seagreen;
   color: white;
   cursor: pointer;
 }
@@ -100,4 +101,39 @@
 
 .navbarTop__right > button :hover {
   cursor: pointer;
+}
+
+@media all and (max-width: 720px) {
+  .headerTwo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    z-index: 100;
+  }
+
+  .headerTwo__logo > h2 {
+    font-size: 20px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+  }
+
+  .headerTwo__middle {
+    padding: 0px 10px;
+  }
+
+  .headerTwo__middle > p {
+    margin: 0px;
+    padding: 0pxs;
+  }
+
+  .headerTwo__rightButton {
+    width: 100%;
+  }
+  .headerTwo__rightButton > button {
+    width: max-content;
+    padding: 0px 100px;
+    font-size: 18px;
+  }
 }

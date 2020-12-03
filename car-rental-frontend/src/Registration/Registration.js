@@ -6,123 +6,96 @@ import * as EmailValidator from "email-validator"; // used when validating with 
 import * as Yup from "yup"; // used when validating with a pre-built solution
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
+import { useHistory } from "react-router";
+import useForm from "./useForm";
+import validate from "./validateInfo";
 
-const Registration = () => (
-  <Formik
-    initialValues={{ email: "", password: "" }}
-    onSubmit={(values, { setSubmitting }) => {
-      setTimeout(() => {
-        console.log("Logging in", values);
-        setSubmitting(false);
-      }, 500);
-    }}
-    validationSchema={Yup.object().shape({
-      email: Yup.string().email().required("Required"),
-      password: Yup.string()
-        .required("No password provided.")
-        .min(8, "Password is too short - should be 8 chars minimum.")
-        .matches(/(?=.*[0-9])/, "Password must contain a number."),
-    })}
-  >
-    {(props) => {
-      const {
-        values,
-        touched,
-        errors,
-        isSubmitting,
-        handleChange,
-        handleBlur,
-        handleSubmit,
-      } = props;
+const Registration = ({ submitForm }) => {
+  const history = useHistory(); //useHistory is used to change routes
 
-      return (
-        <div className="registration">
-          {/* <Link to="/">
+  const { handleChange, handleSubmit, values, errors } = useForm(
+    submitForm,
+    validate
+  );
+
+  return (
+    <div className="registration">
+      {/* <Link to="/">
         <img className="registration__logo" src={amazon_logo_black} alt="" />
       </Link> */}
-          <h2 className="registration__logo">Bengal</h2>
+      <h2 className="registration__logo">Bengal</h2>
 
-          <div className="registration__infoBox">
-            <h2>Register</h2>
-            <form className="registration__option" onSubmit={handleSubmit}>
-              <p>Name</p>
-              {/* <input
+      <div className="registration__infoBox">
+        <h2>Register</h2>
+        <form className="registration__option" onSubmit={handleSubmit}>
+          <p>Name</p>
+          {/* <input
                 type="text"
                 name="email"
                 // value={email}
                 // onChange={(e) => setEmail(e.target.value)}
               /> */}
-              <input
-                id="email"
-                name="name"
-                type="text"
-                // value={values.email}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-              <p>Email</p>
-              {/* <input
+          <input
+            type="text"
+            name="username"
+            value={values.username}
+            onChange={handleChange}
+          />
+          {errors.username && (
+            <p className="login__inputFeedback">{errors.username}</p>
+          )}
+          <p>Email</p>
+          {/* <input
                 type="text"
                 name="email"
                 // value={email}
                 // onChange={(e) => setEmail(e.target.value)}
               /> */}
-              <input
-                id="email"
-                name="email"
-                type="text"
-                value={values.email}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                className={errors.email && touched.email && "error"}
-              />
-              {errors.email && touched.email && (
-                <div className="registration__inputFeedback">
-                  {errors.email}
-                </div>
-              )}
+          <input
+            type="email"
+            name="email"
+            value={values.email}
+            onChange={handleChange}
+          />
+          {errors.email && (
+            <p className="login__inputFeedback">{errors.email}</p>
+          )}
 
-              <p>Password</p>
-              {/* <input
+          <p>Password</p>
+          {/* <input
                 type="password"
                 name="password"
                 // value={password}
                 // onChange={(e) => setPassword(e.target.value)}
               /> */}
 
-              <input
-                id="password"
-                name="password"
-                type="password"
-                value={values.password}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                className={errors.password && touched.password && "error"}
-              />
-              {errors.password && touched.password && (
-                <div className="registration__inputFeedback">
-                  {errors.password}
-                </div>
-              )}
+          <input
+            type="password"
+            name="password"
+            value={values.password}
+            onChange={handleChange}
+          />
+          {errors.password && (
+            <p className="login__inputFeedback">{errors.password}</p>
+          )}
 
-              <p>Phone Number</p>
-              <PhoneInput
-                className="registration__phone"
-                international
-                defaultCountry="BD"
-                // value={value}
-                // onChange={setValue}
-              />
+          <p>Phone Number</p>
+          <PhoneInput
+            className="registration__phone"
+            international
+            defaultCountry="BD"
+            value={values.password}
+            onChange={handleChange}
+          />
+          {errors.phone && (
+            <p className="login__inputFeedback">{errors.phone}</p>
+          )}
 
-              <button type="submit" disabled={isSubmitting}>
-                Register
-              </button>
-            </form>
-          </div>
-        </div>
-      );
-    }}
-  </Formik>
-);
+          <button type="submit">Register</button>
+        </form>
+      </div>
+    </div>
+  );
+};
 
 export default Registration;

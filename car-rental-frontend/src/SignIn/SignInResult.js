@@ -10,13 +10,7 @@ function SignInResult() {
   }
   return (
     <>
-      {!isSubmitted ? <SignIn submitForm={submitForm}/>  : <Home />}
-      {/* {!isSubmitted ? (
-        <SignIn submitForm={submitForm} />
-      ) : (
-        console.log("hoia gse mamma")
-      )}
-      {console.log(isSubmitted)} */}
+      {!isSubmitted ? <SignIn submitForm={submitForm} /> : <Home />}
     </>
   );
 }

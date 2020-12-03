@@ -19,8 +19,11 @@
 }
 
 .registration__infoBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 320px;
-  height: 550px;
+  height: auto;
   border: 1px solid;
   border-color: rgba(0, 0, 0, 0.1);
   border-radius: 5px;
@@ -73,7 +76,7 @@
 
 .registration__phone {
   margin: 10px 0px;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 body {

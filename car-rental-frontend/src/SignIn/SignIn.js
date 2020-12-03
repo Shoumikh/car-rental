@@ -1,13 +1,9 @@
 import React, { useState } from "react";
 import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import "./SignIn.css";
-import { Formik } from "formik";
-import * as EmailValidator from "email-validator"; // used when validating with a self-implemented approach
-import * as Yup from "yup"; // used when validating with a pre-built solution
 import { Link, useHistory } from "react-router-dom";
 import validate from "./validateInfo";
 import useForm from "./useForm";
-import Home from "../Home/Home";
 
 const SignIn = ({ submitForm }) => {
   const { handleChange, handleSubmit, values, errors } = useForm(
@@ -17,12 +13,13 @@ const SignIn = ({ submitForm }) => {
 
   const history = useHistory();
 
+  
+
   return (
     <div className="login">
       <h2 className="login__logo">Bengal</h2>
       <div className="login__infoBox">
         <h2>Sign-In</h2>
-
         <form className="login__option" onSubmit={handleSubmit} noValidate>
           <p>Email</p>
           {/* <input
@@ -33,7 +30,6 @@ const SignIn = ({ submitForm }) => {
             /> */}
 
           <input
-            className="form-input"
             type="email"
             name="email"
             value={values.email}

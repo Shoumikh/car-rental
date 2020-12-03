@@ -20,7 +20,7 @@
 
 .login__infoBox {
   width: 320px;
-  height: 500px;
+  height: auto;
   border: 1px solid;
   border-color: rgba(0, 0, 0, 0.1);
   border-radius: 5px;

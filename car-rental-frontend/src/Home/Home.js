@@ -1,4 +1,5 @@
 import React from "react";
+import { useStateValue } from "../StateProvider";
 import "./Home.css";
 import RentForm from "./RentForm/RentForm";
 

@@ -11,7 +11,11 @@
   align-items: center;
   padding: 5% 0px;
   background-color: white;
-  border-top: 1px solid lightgrey;
+  /* border-bottom: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;
+  border-left: 1px solid lightgrey; */
+  border-radius: 5px;
+  margin-bottom: 20px;
   max-width: 1500px;
   display: flex;
   width: 100%;
@@ -25,4 +29,14 @@
 
 .footer__col > h2 {
   color: seagreen;
+  font-size: 22px;
+}
+
+.footer__col > h3 {
+  font-size: 18px;
+}
+
+.footer__col > p {
+  font-size: 13px;
+  margin-bottom: 4px;
 }

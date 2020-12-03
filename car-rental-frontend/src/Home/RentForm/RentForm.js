@@ -97,6 +97,7 @@ function RentForm() {
             placeholder="Select an option"
           /> */}
           <DropdownButton
+            className="rentForm__carCategory"
             alignRight
             title={pickupLocation}
             id="dropdown-menu-align-right"
@@ -128,6 +129,7 @@ function RentForm() {
             placeholder="Select an option"
           /> */}
           <DropdownButton
+            className="rentForm__carCategory"
             alignRight
             title={dropLocation}
             id="dropdown-menu-align-right"
